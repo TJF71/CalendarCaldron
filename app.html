@@ -21,7 +21,7 @@
 </head>
 
 
-<body>
+<body onload="buildDropDown()">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -69,22 +69,121 @@
         </div>
     </nav>
 
+
+
+
     <main class="container py-3">
-        <h1>APP UI GOES HERE</h1>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col order-md-last">
+                <!-- app logo -->
+                <img src="/img/APPNAMELogo.svg" class="img-fluid p-3">
+            </div>
+    
+            <div class="col order-md-first">
+                <!-- stats -->
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="dropdown-btn">
+                                Pick A Location
+                            </button>
+                            <ul class="dropdown-menu" id="city-dropdown">
+                               
+                                <!-- dropdown menu choices go here -->
 
-        <input class="form-control my-3" 
-            placeholder="Enter a message"
-            type="text"
-            style="width: 10rem"
-            name="message"
-            id="message" />
+                            </ul>
+                        </div>
 
-        <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+                        <table class=" table table-striped mt-2">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th colspan="2">
+                                        Stats for <span id="stats-location"> All</span> Events
+                                    </th>
+                                    <tbody>
+                                        <tr>
+                                            <td >Total attendance</td>
+                                            <td id="total-attendance">1,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td >average attendance</td>
+                                            <td id="avg-attendance">1,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Most attendanded</td>
+                                            <td id="max-attended"> 1,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Least Attended</td>
+                                            <td id="min-attended">1,000</td>
+                                        </tr>
+                                    </tbody>
+                            </thead>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        
+        <div class="mt-3 card-body">
+            <div class="card-body">
+                <button class="btn btn-primary" id="new-event-btn">Add Event</button>
+        
+                <div class="table-responsive">
+                    <table class="table table-striped border mt-2">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Event Name</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Attendance</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="events-table">
+                            <tr>
+                                <td>ComicCon</td>
+                                <td>New York</td>
+                                <td>New York</td>
+                                <td>240,000</td>
+                                <td>6/1/2021</td>
+                            </tr>
+                            <tr>
+                                <td>ComicCon</td>
+                                <td>New York</td>
+                                <td>New York</td>
+                                <td>240,000</td>
+                                <td>6/1/2021</td>
+                            </tr>
+                            <tr>
+                                <td>ComicCon</td>
+                                <td>New York</td>
+                                <td>New York</td>
+                                <td>240,000</td>
+                                <td>6/1/2021</td>
+                            </tr>
+                            <tr>
+                                <td>ComicCon</td>
+                                <td>New York</td>
+                                <td>New York</td>
+                                <td>240,000</td>
+                                <td>6/1/2021</td>
+                            </tr>
+                        </tbody>
+        
+                    </table>
+                </div>
+        
+            </div>
+        </div>
     </main>
 
 
 
-    </main>
+
 
     <footer class="py-3 container-fluid">
         <div class="row align-items-center row-cols-1 row-cols-lg-3 gy-2">
@@ -105,6 +204,9 @@
         </div>
     </footer>
 
+<template id="dropdown-item-template">    
+    <li><a class="dropdown-item" href="#"></a></li>
+</template>
 
 
 <!--Bootstrap JS  -->
@@ -116,13 +218,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="/js/site.js"></script>
-
-<script>
- // get the button on the page and assign it to variable
-    let button = document.getElementById('btnSubmit');
- // tell the button to run the displayMessage function when clicked
-    button.addEventListener('click', displayMessage);
-</script>
 
 </body>
 

@@ -76,6 +76,7 @@ function buildDropDown() {
 
     const dropdownTemplate = document.getElementById('dropdown-item-template');
     const dropdownMenu = document.getElementById('city-dropdown');
+    dropdownMenu.innerHTML = ''; //clear the old drop down menu
 
     // for each of the city names:
     for (let i = 0; i < dropdownChoices.length; i++) {
@@ -91,15 +92,32 @@ function buildDropDown() {
         dropdownMenu.appendChild(dropdownItem);
     }
 
-    // to be continued...?
     displayEvents(currentEvents);
     displayStats(currentEvents);
-
+    document.getElementById('stats-location').innerHTML = 'All';
 }
 
 function getEvents() {
     //TODO: get events from local storage
-    return events;
+    let eventsJson = localStorage.getItem('tjf-events');
+
+    let storedEvents = events;
+
+    if (eventsJson == null){
+        saveEvents(events);
+    } else {
+        storedEvents = JSON.parse(eventsJson);
+    }
+
+    return storedEvents;
+}
+
+function saveEvents(events) {
+
+    let eventsJson = JSON.stringify(events);
+
+    localStorage.setItem('tjf-events', eventsJson);
+
 }
 
 function displayEvents(events) {
@@ -136,10 +154,14 @@ function displayEvents(events) {
         eventRow.appendChild(eventState);
 
         let eventAttendance = document.createElement('td');
-        eventAttendance.innerText = event.attendance;
+        eventAttendance.innerText = event.attendance.toLocaleString();
         eventRow.appendChild(eventAttendance);
 
         let eventDate = document.createElement('td');
+        let date = new Date(event.date);  // variable for date styling
+        eventDate.innerText - date.toLocaleDateString();  // change the HTML
+        eventRow.appendChild(eventDate); // add the date
+ 
         eventDate.innerText = event.date;
         eventRow.appendChild(eventDate);
 
@@ -149,89 +171,186 @@ function displayEvents(events) {
     }
 }
 
-function sumAttendance(events){
+// ORIGINAL SEPERATE FUNCTIONS BELOW
+// function sumAttendance(events){
+//     let sum = 0;
+
+//     for (let i = 0; i < events.length; i++){
+//         let event = events[i];
+        
+//         sum += event.attendance;
+//     }
+
+//     return sum;
+// }
+
+// function avgAttendance (events){
+//     let sum = 0;
+//     let count = 0;
+//     let avg = 0;
+
+//     for (let i = 0; i < events.length; i++){
+//         let event = events[i];
+//         count ++
+//         sum += event.attendance;
+//     }
+
+//     avg = sum / count;
+
+//     return avg;
+
+// }
+
+// function minAttendance (events) {
+//     let event = events[0];
+//     let min = event.attendance;
+
+//     for (let i = 0; i < events.length; i++){
+//         event = events[i];
+//         if (event.attendance < min) {
+//             min = event.attendance
+//         }
+//     }
+
+//     return min
+
+// }
+
+// function maxAttendance(events) {
+//     // let event = events[0];
+//     let max = events[0].attendance;
+
+//     for(let i = 0; i < events.length; i++) {
+//         let event = events[i];
+//         if (event.attendance > max){
+//             max = event.attendance;
+//         }
+    
+
+//     }
+
+//     return max;
+
+// }
+
+
+function calcluateStats(events){
+    
     let sum = 0;
+    let min = events[0].attendance;
+    let max = events[0].attendance;
 
     for (let i = 0; i < events.length; i++){
         let event = events[i];
         
         sum += event.attendance;
-    }
-
-    return sum;
-}
-
-function avgAttendance (events){
-    let sum = 0;
-    let count = 0;
-    let avg = 0;
-
-    for (let i = 0; i < events.length; i++){
-        let event = events[i];
-        count ++
-        sum += event.attendance;
-    }
-
-    avg = sum / count;
-
-    return avg;
-
-}
-
-function minAttendance (events) {
-
-
-
-
-    let event = events[0];
-    let min = event.attendance;
-
-    for (let i = 0; i < events.length; i++){
-        event = events[i];
-        if (event.attendance < min) {
+        
+        if (event.attendance < min)  {
             min = event.attendance
-        }
-    }
-
-    return min
-
-}
-
-function maxAttendance(events) {
-    // let event = events[0];
-    let max = events[0].attendance;
-
-    for(let i = 0; i < events.length; i++) {
-        let event = events[i];
-        if (event.attendance > max){
+        }  
+        
+        if (event.attendance > max) {
             max = event.attendance;
         }
-    
-
     }
 
-    return max;
+    let average = sum / events.length;
+
+    let stats = {
+        sum: sum,
+        average: average,
+        min: min,
+        max: max
+    }
+
+    return stats;
 
 }
-
-
 
 
 function displayStats(events) {
-    // calculating the total attendence
-    let total = sumAttendance(events);
-    document.getElementById('total-attendance').innerHTML = total.toLocaleString();
+    let stats = calcluateStats(events);
 
-    // calculatinag and displaying  the avg attendande
-    let average = avgAttendance(events);
-    document.getElementById('avg-attendance').innerHTML = Math.round(average).toLocaleString();
+    document.getElementById('total-attendance').innerHTML = stats.sum.toLocaleString();
 
-    // calcluate and display min attendance
-    let min = minAttendance(events);
-    document.getElementById('min-attended').innerHTML = min.toLocaleString();
+    document.getElementById('avg-attendance').innerHTML = Math.round(stats.average).toLocaleString();
 
-    // calcluate and display max attendance
-    let max = maxAttendance(events);
-    document.getElementById('max-attended').innerHTML = max.toLocaleString();
+    document.getElementById('min-attended').innerHTML = stats.min.toLocaleString();
 
+    document.getElementById('max-attended').innerHTML = stats.max.toLocaleString();
+
+}
+
+function filterByCity(element) {
+    // figure out which city we want 
+    let cityName = element.textContent;
+
+    document.getElementById('stats-location').innerHTML = cityName;
+
+
+    // get all the events
+    let allEvents = getEvents();
+
+    // filter to just one city
+    let filteredEvents = [];
+
+ 
+//     LOOP SOLUTION
+//     for (let i = 0; i <allEvents.length; i++){
+//         let event = allEvents[i];
+
+//         if(event.city == cityName || cityName == 'All') {
+//         filteredEvents.push(event);
+//     }
+// }
+
+    //ALTERNATE TO FOR LOOP ABOVE
+    if (cityName == 'All') {
+        filteredEvents = allEvents;
+    } else {
+        filteredEvents = allEvents.filter(event => event.city == cityName); 
+    }
+
+    // ALTERNATE WITH ONE LINE OF CODE 
+    // let filteredEvents = cityName == 'All' ? allEvents : allEvents.filter(e => e.city == cityName);
+
+    // call display stats with the events for that city
+    displayStats(filteredEvents);
+    
+    // call display events with the events for that city
+    displayEvents(filteredEvents);
+
+
+}
+
+function saveNewEvent() {
+
+    // get the HTML form element
+    let newEventForm = document.getElementById('newEventForm');
+    let formData = new FormData(newEventForm);
+    let newEvent = Object.fromEntries(formData.entries());
+
+    // create an object from the inputs
+    newEvent.attendance = parseInt(newEvent.attendance);  // change string to numbers
+    newEvent.date = new Date(newEvent.date).toLocaleDateString();  // change date to local date format
+
+    // get all the current events
+    let allEvents = getEvents();
+
+    // add our new event
+    allEvents.push(newEvent);
+
+    // save all events witht eh new event
+    saveEvents(allEvents);
+
+    //rest the form inputs
+    newEventForm.reset();
+
+    // hide the bootsrap modal
+    let modalElement = document.getElementById('exampleModal');
+    let bsModal = bootstrap.Modal.getInstance(modalElement);
+    bsModal.hide();
+
+    //dispaly all events
+    buildDropDown();
 }

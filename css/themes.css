@@ -1,0 +1,336 @@
+:root {
+    /* default theme will be blue */
+    --tf-theme-core: var(--tf-blue-core);
+    --tf-theme-100: var(--tf-blue-100);
+    --tf-theme-150: var(--tf-blue-150);
+    --tf-theme-200: var(--tf-blue-200);
+    --tf-theme-300: var(--tf-blue-300);
+    --tf-theme-400: var(--tf-blue-400);
+    --tf-theme-500: var(--tf-blue-500);
+    --tf-theme-600: var(--tf-blue-600);
+    --tf-theme-700: var(--tf-blue-700);
+    --tf-theme-800: var(--tf-blue-800);
+    --tf-theme-850: var(--tf-blue-850);
+    --tf-theme-900: var(--tf-blue-900);
+    /* #region blue */
+    --tf-blue-core: #0d6efd;
+    --tf-blue-100: hsl(216, 50%, 91%);
+    --tf-blue-150: hsl(216, 50%, 86%);
+    --tf-blue-200: hsl(216, 50%, 81%);
+    --tf-blue-300: hsl(216, 50%, 71%);
+    --tf-blue-400: hsl(216, 50%, 61%);
+    --tf-blue-500: hsl(216, 50%, 51%);
+    --tf-blue-600: hsl(216, 50%, 41%);
+    --tf-blue-700: hsl(216, 50%, 31%);
+    --tf-blue-800: hsl(216, 50%, 21%);
+    --tf-blue-850: hsl(216, 50%, 16%);
+    --tf-blue-900: hsl(216, 50%, 11%);
+    /* #endregion blue */
+    /* #region indigo */
+    --tf-indigo-core: #6610f2;
+    --tf-indigo-100: hsl(263, 88%, 90%);
+    --tf-indigo-150: hsl(263, 88%, 85%);
+    --tf-indigo-200: hsl(263, 88%, 80%);
+    --tf-indigo-300: hsl(263, 88%, 70%);
+    --tf-indigo-400: hsl(263, 88%, 60%);
+    --tf-indigo-500: hsl(263, 88%, 50%);
+    --tf-indigo-600: hsl(263, 88%, 40%);
+    --tf-indigo-700: hsl(263, 88%, 30%);
+    --tf-indigo-800: hsl(263, 88%, 20%);
+    --tf-indigo-850: hsl(263, 88%, 15%);
+    --tf-indigo-900: hsl(263, 88%, 10%);
+    /* #endregion indigo */
+    /* #region purple */
+    --tf-purple-core: #6f42c1;
+    --tf-purple-100: hsl(261, 52%, 90%);
+    --tf-purple-150: hsl(261, 52%, 85%);
+    --tf-purple-200: hsl(261, 52%, 80%);
+    --tf-purple-300: hsl(261, 52%, 70%);
+    --tf-purple-400: hsl(261, 52%, 60%);
+    --tf-purple-500: hsl(261, 52%, 50%);
+    --tf-purple-600: hsl(261, 52%, 40%);
+    --tf-purple-700: hsl(261, 52%, 30%);
+    --tf-purple-800: hsl(261, 52%, 20%);
+    --tf-purple-850: hsl(261, 52%, 15%);
+    --tf-purple-900: hsl(261, 52%, 10%);
+    /* #endregion purple */
+    /* #region pink */
+    --tf-pink-core: #d63384;
+    --tf-pink-100: hsl(331, 47%, 90%);
+    --tf-pink-150: hsl(331, 47%, 85%);
+    --tf-pink-200: hsl(331, 47%, 80%);
+    --tf-pink-300: hsl(331, 47%, 70%);
+    --tf-pink-400: hsl(331, 47%, 60%);
+    --tf-pink-500: hsl(331, 47%, 50%);
+    --tf-pink-600: hsl(331, 47%, 40%);
+    --tf-pink-700: hsl(331, 47%, 30%);
+    --tf-pink-800: hsl(331, 47%, 20%);
+    --tf-pink-850: hsl(331, 47%, 15%);
+    --tf-pink-900: hsl(331, 47%, 10%);
+    /* #endregion pink */
+    /* #region red */
+    --tf-red-core: #dc3545;
+    --tf-red-100: hsl(355, 70%, 91%);
+    --tf-red-150: hsl(355, 70%, 86%);
+    --tf-red-200: hsl(355, 70%, 81%);
+    --tf-red-300: hsl(355, 70%, 71%);
+    --tf-red-400: hsl(355, 70%, 61%);
+    --tf-red-500: hsl(355, 70%, 51%);
+    --tf-red-600: hsl(355, 70%, 41%);
+    --tf-red-700: hsl(355, 70%, 31%);
+    --tf-red-800: hsl(355, 70%, 21%);
+    --tf-red-850: hsl(355, 70%, 16%);
+    --tf-red-900: hsl(355, 70%, 11%);
+    /* #endregion red */
+    /* #region orange */
+    --tf-orange-core: #fd7e14;
+    --tf-orange-100: hsl(19, 50%, 91%);
+    --tf-orange-150: hsl(19, 50%, 86%);
+    --tf-orange-200: hsl(19, 50%, 81%);
+    --tf-orange-300: hsl(19, 50%, 71%);
+    --tf-orange-400: hsl(19, 50%, 61%);
+    --tf-orange-500: hsl(19, 50%, 51%);
+    --tf-orange-600: hsl(19, 50%, 41%);
+    --tf-orange-700: hsl(19, 50%, 31%);
+    --tf-orange-800: hsl(19, 50%, 21%);
+    --tf-orange-850: hsl(19, 50%, 16%);
+    --tf-orange-900: hsl(19, 50%, 11%);
+    /* #endregion orange */
+    /* #region yellow */
+    --tf-yellow-core: #ffc107;
+    --tf-yellow-100: hsl(46, 70%, 90%);
+    --tf-yellow-150: hsl(46, 70%, 85%);
+    --tf-yellow-200: hsl(46, 70%, 80%);
+    --tf-yellow-300: hsl(46, 70%, 70%);
+    --tf-yellow-400: hsl(46, 70%, 60%);
+    --tf-yellow-500: hsl(46, 70%, 50%);
+    --tf-yellow-600: hsl(46, 70%, 40%);
+    --tf-yellow-700: hsl(46, 70%, 30%);
+    --tf-yellow-800: hsl(46, 70%, 20%);
+    --tf-yellow-850: hsl(46, 70%, 15%);
+    --tf-yellow-900: hsl(46, 70%, 10%);
+    /* #endregion yellow */
+    /* #region green */
+    --tf-green-core: #198754;
+    --tf-green-100: hsl(152, 38%, 95%);
+    --tf-green-150: hsl(152, 38%, 90%);
+    --tf-green-200: hsl(152, 38%, 85%);
+    --tf-green-300: hsl(152, 38%, 75%);
+    --tf-green-400: hsl(152, 38%, 65%);
+    --tf-green-500: hsl(152, 38%, 55%);
+    --tf-green-600: hsl(152, 38%, 45%);
+    --tf-green-700: hsl(152, 38%, 35%);
+    --tf-green-800: hsl(152, 38%, 25%);
+    --tf-green-850: hsl(152, 38%, 20%);
+    --tf-green-900: hsl(152, 38%, 15%);
+    /* #endregion green */
+    /* #region teal */
+    --tf-teal-core: #20c997;
+    --tf-teal-100: hsl(162, 60%, 89%);
+    --tf-teal-150: hsl(162, 60%, 84%);
+    --tf-teal-200: hsl(162, 60%, 79%);
+    --tf-teal-300: hsl(162, 60%, 69%);
+    --tf-teal-400: hsl(162, 60%, 59%);
+    --tf-teal-500: hsl(162, 60%, 49%);
+    --tf-teal-600: hsl(162, 60%, 39%);
+    --tf-teal-700: hsl(162, 60%, 29%);
+    --tf-teal-800: hsl(162, 60%, 19%);
+    --tf-teal-850: hsl(162, 60%, 14%);
+    --tf-teal-900: hsl(162, 60%, 9%);
+    /* #endregion teal */
+    /* #region cyan */
+    --tf-cyan-core: #0dcaf0;
+    --tf-cyan-100: hsl(191, 60%, 90%);
+    --tf-cyan-150: hsl(191, 60%, 85%);
+    --tf-cyan-200: hsl(191, 60%, 80%);
+    --tf-cyan-300: hsl(191, 60%, 70%);
+    --tf-cyan-400: hsl(191, 60%, 60%);
+    --tf-cyan-500: hsl(191, 60%, 50%);
+    --tf-cyan-600: hsl(191, 60%, 40%);
+    --tf-cyan-700: hsl(191, 60%, 30%);
+    --tf-cyan-800: hsl(191, 60%, 20%);
+    --tf-cyan-850: hsl(191, 60%, 15%);
+    --tf-cyan-900: hsl(191, 60%, 10%);
+    /* #endregion cyan */
+    /* #region gray */
+    --tf-gray-core: #adb5bd;
+    --tf-gray-100: hsl(210, 17%, 98%);
+    --tf-gray-150: hsl(210, 17%, 93%);
+    --tf-gray-200: hsl(210, 17%, 88%);
+    --tf-gray-300: hsl(210, 17%, 78%);
+    --tf-gray-400: hsl(210, 17%, 68%);
+    --tf-gray-500: hsl(210, 17%, 58%);
+    --tf-gray-600: hsl(210, 17%, 48%);
+    --tf-gray-700: hsl(210, 17%, 38%);
+    --tf-gray-800: hsl(210, 17%, 28%);
+    --tf-gray-850: hsl(210, 17%, 23%);
+    --tf-gray-900: hsl(210, 17%, 18%);
+    /* #endregion gray */
+}
+
+
+
+[data-tf-theme="blue"] {
+    --tf-theme-core: var(--tf-blue-core);
+    --tf-theme-100: var(--tf-blue-100);
+    --tf-theme-150: var(--tf-blue-150);
+    --tf-theme-200: var(--tf-blue-200);
+    --tf-theme-300: var(--tf-blue-300);
+    --tf-theme-400: var(--tf-blue-400);
+    --tf-theme-500: var(--tf-blue-500);
+    --tf-theme-600: var(--tf-blue-600);
+    --tf-theme-700: var(--tf-blue-700);
+    --tf-theme-800: var(--tf-blue-800);
+    --tf-theme-850: var(--tf-blue-850);
+    --tf-theme-900: var(--tf-blue-900);
+}
+
+[data-tf-theme="indigo"] {
+    --tf-theme-core: var(--tf-indigo-core);
+    --tf-theme-100: var(--tf-indigo-100);
+    --tf-theme-150: var(--tf-indigo-150);
+    --tf-theme-200: var(--tf-indigo-200);
+    --tf-theme-300: var(--tf-indigo-300);
+    --tf-theme-400: var(--tf-indigo-400);
+    --tf-theme-500: var(--tf-indigo-500);
+    --tf-theme-600: var(--tf-indigo-600);
+    --tf-theme-700: var(--tf-indigo-700);
+    --tf-theme-800: var(--tf-indigo-800);
+    --tf-theme-850: var(--tf-indigo-850);
+    --tf-theme-900: var(--tf-indigo-900);
+}
+
+[data-tf-theme="purple"] {
+    --tf-theme-core: var(--tf-purple-core);
+    --tf-theme-100: var(--tf-purple-100);
+    --tf-theme-150: var(--tf-purple-150);
+    --tf-theme-200: var(--tf-purple-200);
+    --tf-theme-300: var(--tf-purple-300);
+    --tf-theme-400: var(--tf-purple-400);
+    --tf-theme-500: var(--tf-purple-500);
+    --tf-theme-600: var(--tf-purple-600);
+    --tf-theme-700: var(--tf-purple-700);
+    --tf-theme-800: var(--tf-purple-800);
+    --tf-theme-850: var(--tf-purple-850);
+    --tf-theme-900: var(--tf-purple-900);
+}
+
+[data-tf-theme="pink"] {
+    --tf-theme-core: var(--tf-pink-core);
+    --tf-theme-100: var(--tf-pink-100);
+    --tf-theme-150: var(--tf-pink-150);
+    --tf-theme-200: var(--tf-pink-200);
+    --tf-theme-300: var(--tf-pink-300);
+    --tf-theme-400: var(--tf-pink-400);
+    --tf-theme-500: var(--tf-pink-500);
+    --tf-theme-600: var(--tf-pink-600);
+    --tf-theme-700: var(--tf-pink-700);
+    --tf-theme-800: var(--tf-pink-800);
+    --tf-theme-850: var(--tf-pink-850);
+    --tf-theme-900: var(--tf-pink-900);
+}
+
+[data-tf-theme="red"] {
+    --tf-theme-core: var(--tf-red-core);
+    --tf-theme-100: var(--tf-red-100);
+    --tf-theme-150: var(--tf-red-150);
+    --tf-theme-200: var(--tf-red-200);
+    --tf-theme-300: var(--tf-red-300);
+    --tf-theme-400: var(--tf-red-400);
+    --tf-theme-500: var(--tf-red-500);
+    --tf-theme-600: var(--tf-red-600);
+    --tf-theme-700: var(--tf-red-700);
+    --tf-theme-800: var(--tf-red-800);
+    --tf-theme-850: var(--tf-red-850);
+    --tf-theme-900: var(--tf-red-900);
+}
+
+[data-tf-theme="orange"] {
+    --tf-theme-core: var(--tf-orange-core);
+    --tf-theme-100: var(--tf-orange-100);
+    --tf-theme-150: var(--tf-orange-150);
+    --tf-theme-200: var(--tf-orange-200);
+    --tf-theme-300: var(--tf-orange-300);
+    --tf-theme-400: var(--tf-orange-400);
+    --tf-theme-500: var(--tf-orange-500);
+    --tf-theme-600: var(--tf-orange-600);
+    --tf-theme-700: var(--tf-orange-700);
+    --tf-theme-800: var(--tf-orange-800);
+    --tf-theme-850: var(--tf-orange-850);
+    --tf-theme-900: var(--tf-orange-900);
+}
+
+[data-tf-theme="yellow"] {
+    --tf-theme-core: var(--tf-yellow-core);
+    --tf-theme-100: var(--tf-yellow-100);
+    --tf-theme-150: var(--tf-yellow-150);
+    --tf-theme-200: var(--tf-yellow-200);
+    --tf-theme-300: var(--tf-yellow-300);
+    --tf-theme-400: var(--tf-yellow-400);
+    --tf-theme-500: var(--tf-yellow-500);
+    --tf-theme-600: var(--tf-yellow-600);
+    --tf-theme-700: var(--tf-yellow-700);
+    --tf-theme-800: var(--tf-yellow-800);
+    --tf-theme-850: var(--tf-yellow-850);
+    --tf-theme-900: var(--tf-yellow-900);
+}
+
+[data-tf-theme="green"] {
+    --tf-theme-core: #198754;
+    --tf-theme-100: hsl(152, 38%, 95%);
+    --tf-theme-150: hsl(152, 38%, 90%);
+    --tf-theme-200: hsl(152, 38%, 85%);
+    --tf-theme-300: hsl(152, 38%, 75%);
+    --tf-theme-400: hsl(152, 38%, 65%);
+    --tf-theme-500: hsl(152, 38%, 55%);
+    --tf-theme-600: hsl(152, 38%, 45%);
+    --tf-theme-700: hsl(152, 38%, 35%);
+    --tf-theme-800: hsl(152, 38%, 25%);
+    --tf-theme-850: hsl(152, 38%, 20%);
+    --tf-theme-900: hsl(152, 38%, 15%);
+}
+
+[data-tf-theme="teal"] {
+    --tf-theme-core: var(--tf-teal-core);
+    --tf-theme-100: var(--tf-teal-100);
+    --tf-theme-150: var(--tf-teal-150);
+    --tf-theme-200: var(--tf-teal-200);
+    --tf-theme-300: var(--tf-teal-300);
+    --tf-theme-400: var(--tf-teal-400);
+    --tf-theme-500: var(--tf-teal-500);
+    --tf-theme-600: var(--tf-teal-600);
+    --tf-theme-700: var(--tf-teal-700);
+    --tf-theme-800: var(--tf-teal-800);
+    --tf-theme-850: var(--tf-teal-850);
+    --tf-theme-900: var(--tf-teal-900);
+}
+
+[data-tf-theme="cyan"] {
+    --tf-theme-core: var(--tf-cyan-core);
+    --tf-theme-100: var(--tf-cyan-100);
+    --tf-theme-150: var(--tf-cyan-150);
+    --tf-theme-200: var(--tf-cyan-200);
+    --tf-theme-300: var(--tf-cyan-300);
+    --tf-theme-400: var(--tf-cyan-400);
+    --tf-theme-500: var(--tf-cyan-500);
+    --tf-theme-600: var(--tf-cyan-600);
+    --tf-theme-700: var(--tf-cyan-700);
+    --tf-theme-800: var(--tf-cyan-800);
+    --tf-theme-850: var(--tf-cyan-850);
+    --tf-theme-900: var(--tf-cyan-900);
+}
+
+[data-tf-theme="gray"] {
+    --tf-theme-core: var(--tf-gray-core);
+    --tf-theme-100: var(--tf-gray-100);
+    --tf-theme-150: var(--tf-gray-150);
+    --tf-theme-200: var(--tf-gray-200);
+    --tf-theme-300: var(--tf-gray-300);
+    --tf-theme-400: var(--tf-gray-400);
+    --tf-theme-500: var(--tf-gray-500);
+    --tf-theme-600: var(--tf-gray-600);
+    --tf-theme-700: var(--tf-gray-700);
+    --tf-theme-800: var(--tf-gray-800);
+    --tf-theme-850: var(--tf-gray-850);
+    --tf-theme-900: var(--tf-gray-900);
+}
